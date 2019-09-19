@@ -42,3 +42,23 @@ insert into  veggies (veggie_id, veggie_price,veggie_name) values ('10',3,'Brocc
 insert into  veggies (veggie_id, veggie_price,veggie_name) values ('11',6,'Brussels Sprouts');
 insert into  veggies (veggie_id, veggie_price,veggie_name) values ('12',5,'potatoe');
 select * from veggies
+select veggies.veggie_name, 
+lots.quantity_of_vegatable * veggies.veggie_price 
+from lots, veggies
+where lots.veggie_id =
+veggies.veggie_id
+select  max(lots.quantity_of_vegatable) , max(veggies.veggie_name)
+from lots, veggies
+where lots.veggie_id = veggies.veggie_id 
+and veggies.veggie_type = 'root'
+select veggies.veggie_name, 
+lots.quantity_of_vegatable * veggies.veggie_price as total 
+from lots, veggies
+where lots.veggie_id =
+veggies.veggie_id
+order by veggie_name
+ 
+select lots.quantity_of_vegatable 
+from lots, veggies
+where lots.veggie_id =
+veggies.veggie_id
